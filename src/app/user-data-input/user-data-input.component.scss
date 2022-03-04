@@ -1,6 +1,21 @@
 .user-data-input-wrapper
 {
-  border-radius: 20px;
-  background-color: #c5ffee;
-  padding: 20px;
+  border-bottom: 1px solid rgb(207, 207, 207);
+  padding-bottom: 2rem;
+}
+
+.user-data-input-wrapper table tr td
+{
+  padding-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+.user-data-input-wrapper table tr td label
+{
+  font-weight: 700;
+}
+
+.user-data-input-wrapper table tr td button
+{
+  width: 100%;
 }
