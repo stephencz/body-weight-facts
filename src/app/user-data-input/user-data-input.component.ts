@@ -1,7 +1,12 @@
-import { Component, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter} from '@angular/core';
 
 import { UserData } from '../types/user-data';
 import { UserDataErrorInfo } from '../types/user-data-error-info';
+
+import { 
+  convertInchesToMeters, 
+  convertLbsToKgs
+} from '../lib/conversion';
 
 @Component({
   selector: 'app-user-data-input',
@@ -10,6 +15,7 @@ import { UserDataErrorInfo } from '../types/user-data-error-info';
 })
 export class UserDataInputComponent {
 
+  @Input() userData: UserData;
   @Output() userDataUpdatedEvent = new EventEmitter<UserData>();
   
   userDataErrorInfo: UserDataErrorInfo = {
@@ -17,14 +23,6 @@ export class UserDataInputComponent {
     heightHasError: false,
     weightHasError: false
   }
-
-  userData: UserData = {
-    age: null,
-    height: null,
-    weight: null,
-    sex: null,
-    isMetric: false,
-  };
 
   handleUserAgeUpdate(event: any) {
 
@@ -41,11 +39,26 @@ export class UserDataInputComponent {
 
   handleUserHeightUpdate(event: any) {
     if(!isNaN(event.target.value)) {
+      if(event.target.value < 0) {
+        this.userData.height = 0;
+
+      } else {
+        if(!this.userData.isMetric) {
+          this.userData.height = convertInchesToMeters(event.target.current);
+          console.log("EVENT: " + event.target.current);
+          console.log("METERS: " + convertInchesToMeters(event.target.current));
+
+        } else {
+          this.userData.height = event.target.current;
+
+        }
+      }
+
       this.userDataErrorInfo.heightHasError = false;
-      this.userData.height = event.target.value;
     
     } else {
       this.userDataErrorInfo.heightHasError = true;
+      
     }
 
     this.userDataUpdatedEvent.emit(this.userData);
@@ -53,11 +66,24 @@ export class UserDataInputComponent {
 
   handleUserWeightUpdate(event: any) {
     if(!isNaN(event.target.value)) {
+      if(event.target.value < 0) {
+        this.userData.weight = 0;
+
+      } else {
+        if(!this.userData.isMetric) {
+          this.userData.weight = convertLbsToKgs(event.target.value);
+
+        } else {
+          this.userData.weight = event.target.value;
+
+        }
+      }
+
       this.userDataErrorInfo.weightHasError = false;
-      this.userData.weight = event.target.value;
     
     } else {
       this.userDataErrorInfo.weightHasError = true;
+
     }
 
     this.userDataUpdatedEvent.emit(this.userData);

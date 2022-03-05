@@ -11,8 +11,10 @@
     </div>
     <div class="row">
       <div class="col-lg-10 mx-auto">
-        <app-user-data-input (userDataUpdatedEvent)="updateUserData($event)">
-        </app-user-data-input>
+        <app-user-data-input 
+          [userData]="userData" 
+          (userDataUpdatedEvent)="updateUserData($event)"
+        ></app-user-data-input>
       </div>
     </div>
   </div>

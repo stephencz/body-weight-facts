@@ -14,11 +14,40 @@ export class AppComponent {
     height: null,
     weight: null,
     sex: null,
+
+    bmi: null,
+    bmiRange: null,
+    bmr: null,
+  
+    tdeeSedentary: null,
+    tdeeLight: null,
+    tdeeModerate: null,
+    tdeeHeavy: null,
+    tdeeAthlete: null,
+  
+    macroCarb: null,
+    macroFat: null,
+    macroProtein: null,
+
     isMetric: false,
   };
 
-  updateUserData(newUserData: UserData) {
+  updateUserData(newUserData: UserData) : void {
     this.userData = newUserData;
-    console.log("PARENT: " + this.userData.age);
   }
+
+  /**
+   * Calculates and returns the Body Mass Index of the user.
+   * @param userData UserData object
+   * @returns BMI
+   */
+  calculateBodyMassIndex(userData: UserData) : number {
+    if(userData.sex === "Male") {
+      return 0;
+    } else {
+      return 0;
+    }
+  }
+
+ 
 }

@@ -1,12 +1,15 @@
 .user-data-input-wrapper
 {
-  border-bottom: 1px solid rgb(207, 207, 207);
+  border-top: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+
+  padding-top: 3.5rem;
   padding-bottom: 2rem;
 }
 
 .user-data-input-wrapper table tr td
 {
-  padding-bottom: 1rem;
+  padding-bottom: 1.5rem;
   padding-right: 0.5rem;
 }
 
@@ -18,4 +21,14 @@
 .user-data-input-wrapper table tr td button
 {
   width: 100%;
+}
+
+.user-data-input-wrapper input
+{
+  border-radius: 5px;
+}
+
+.user-data-input-wrapper input.input-error
+{
+  background-color: #fa9a9a;
 }
