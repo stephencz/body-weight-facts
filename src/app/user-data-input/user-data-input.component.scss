@@ -1,16 +1,36 @@
 .user-data-input-wrapper
 {
-  border-top: 1px solid #cfcfcf;
-  border-bottom: 1px solid #cfcfcf;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
-  padding-top: 3.5rem;
-  padding-bottom: 2rem;
+.user-data-input-wrapper .user-data-info
+{
+  margin-bottom: 2rem;
+}
+
+.user-data-input-wrapper table
+{
+  display: block;
+
+  border-radius: 20px;
+  border: 3px solid #259f58;
+  background-color: #27ae60;
+
+  color: #fff;
+
+  padding: 2rem;
 }
 
 .user-data-input-wrapper table tr td
 {
   padding-bottom: 1.5rem;
   padding-right: 0.5rem;
+}
+
+.user-data-input-wrapper table tr:last-child td
+{
+  padding-bottom: 0px;
 }
 
 .user-data-input-wrapper table tr td label

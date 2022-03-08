@@ -2,11 +2,12 @@
 .header-wrapper
 {
   background-color: #27ae60;
-  color: #efefef;
+  border-bottom: 3px solid #259f58;
 }
 
 .header-wrapper header h1.brand
 {
+  color: #efefef;
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 2rem;
@@ -15,8 +16,12 @@
 
 .header-wrapper header .intro
 {
+  border-radius: 20px;
+  
   color: #232323;
-  background-color: #27ae60;
+  background-color: #efefef;
+
   font-size: 1rem;
   padding: 2rem;
+  margin-bottom: 2rem;
 }

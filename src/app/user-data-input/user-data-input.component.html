@@ -1,91 +1,111 @@
 <div class="user-data-input-wrapper">
-  <div class="row">
-    <div class="col-xl-6">
-      <table>
-        <tbody>
-          <tr>
-            <td>
-              <label for="age">Age:</label>
-            </td>
-            <td colspan="3">
-              <input 
-                id="age" 
-                type="text" 
-                (change)="handleUserAgeUpdate($event)" 
-                [ngClass]="{'input-error': userDataErrorInfo.ageHasError}"
-              />
-            </td>
-          </tr>
-          
-          <ng-template [ngIf]="!userData.isMetric">
-            <tr>
-              <td>
-                <label for="height">Height (in):</label>
-              </td>
-              <td colspan="3">
-                <input 
-                  id="height" 
-                  type="text" 
-                  (change)="handleUserHeightUpdate($event)" 
-                  [ngClass]="{'input-error': userDataErrorInfo.heightHasError}"
-                />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="weight">Weight (lbs):</label>
-              </td>
-              <td colspan="3">
-                <input 
-                  id="weight" 
-                  type="text" 
-                  (change)="handleUserWeightUpdate($event)" 
-                  [ngClass]="{'input-error': userDataErrorInfo.weightHasError}"
-                />
-              </td>
-            </tr>
-          </ng-template>
-    
-          <ng-template [ngIf]="userData.isMetric">
-            <tr>
-              <td>
-                <label for="height">Height (m):</label>
-              </td>
-              <td colspan="3">
-                <input id="height" type="text" (change)="handleUserHeightUpdate($event)" />
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <label for="weight">Weight (kg):</label>
-              </td>
-              <td colspan="3">
-                <input id="weight" type="text" (change)="handleUserWeightUpdate($event)"  />
-              </td>
-            </tr>
-          </ng-template>
-    
-          <tr>
-            <td><label for="sex">Sex: </label></td>
-            <td>
-              <select (change)="handleUserSexUpdate($event)">
-                <option disabled selected value> Choose </option>
-                <option>Male</option>
-                <option>Female</option>
-              </select>
-            </td>
-            <td>
-              <label for="is-metric">Use Metric?</label>
-            </td>
-            <td>
-              <input id="is-metric" type="checkbox" (click)="handleUserMetricUpdate()"/>
-            </td>
-          </tr>
-          
-        </tbody>
-      </table>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 offset-lg-1">
+        <div class="user-data-info">
+          <ng-content></ng-content>
+        </div>
+      </div>
     </div>
-    
+    <div class="row">
+      <div class="col-lg-6 offset-lg-1">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <label for="age">Age:</label>
+              </td>
+              <td colspan="3">
+                <input 
+                  id="age" 
+                  type="text" 
+                  (change)="handleUserAgeUpdate($event)" 
+                  [ngClass]="{'input-error': userDataErrorInfo.ageHasError}"
+                  placeholder="How old are you?"
+                />
+              </td>
+            </tr>
+            
+            <ng-template [ngIf]="!userData.isMetric">
+              <tr>
+                <td>
+                  <label for="height">Height:</label>
+                </td>
+                <td colspan="3">
+                  <input 
+                    id="height" 
+                    type="text" 
+                    (change)="handleUserHeightUpdate($event)" 
+                    [ngClass]="{'input-error': userDataErrorInfo.heightHasError}"
+                    placeholder="inches"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="weight">Weight:</label>
+                </td>
+                <td colspan="3">
+                  <input 
+                    id="weight" 
+                    type="text" 
+                    (change)="handleUserWeightUpdate($event)" 
+                    [ngClass]="{'input-error': userDataErrorInfo.weightHasError}"
+                    placeholder="pounds"
+                  />
+                </td>
+              </tr>
+            </ng-template>
+      
+            <ng-template [ngIf]="userData.isMetric">
+              <tr>
+                <td>
+                  <label for="height">Height:</label>
+                </td>
+                <td colspan="3">
+                  <input 
+                    id="height" 
+                    type="text" 
+                    (change)="handleUserHeightUpdate($event)" 
+                    placeholder="meters"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="weight">Weight:</label>
+                </td>
+                <td colspan="3">
+                  <input 
+                    id="weight" 
+                    type="text" 
+                    (change)="handleUserWeightUpdate($event)"  
+                    placeholder="kilograms"
+                  />
+                </td>
+              </tr>
+            </ng-template>
+      
+            <tr>
+              <td><label for="sex">Sex: </label></td>
+              <td>
+                <select (change)="handleUserSexUpdate($event)">
+                  <option disabled selected value> Choose </option>
+                  <option>Male</option>
+                  <option>Female</option>
+                </select>
+              </td>
+              <td>
+                <label for="is-metric">Use Metric?</label>
+              </td>
+              <td>
+                <input id="is-metric" type="checkbox" (click)="handleUserMetricUpdate()"/>
+              </td>
+            </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
-  
 </div>

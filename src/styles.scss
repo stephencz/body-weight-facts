@@ -1,15 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700);
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500&family=Noto+Sans:wght@400;700&display=swap");
 
 $fredoka-ff: 'Fredoka', sans-serif;
-$source-sans-pro-ff: 'Source Sans Pro', sans-serif;
+$noto-sans-ff: 'Noto Sans', sans-serif;
 
 html, body
 {
-  font-family: $source-sans-pro-ff;
+  font-family: $noto-sans-ff;
   font-size: 20px;
-  line-height: 1.5rem;
+  line-height: 1.7rem;
 }
 
 h1, h2, h3, h4, h5, h6
