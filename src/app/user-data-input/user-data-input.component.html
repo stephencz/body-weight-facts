@@ -68,7 +68,8 @@
           <tr>
             <td><label for="sex">Sex: </label></td>
             <td>
-              <select [(ngModel)]="userData.sex">
+              <select (change)="handleUserSexUpdate($event)">
+                <option disabled selected value> Choose </option>
                 <option>Male</option>
                 <option>Female</option>
               </select>

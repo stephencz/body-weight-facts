@@ -1,19 +1,22 @@
 
-header
+.header-wrapper
 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  background-color: #27ae60;
+  color: #efefef;
 }
 
-header h1.brand
+.header-wrapper header h1.brand
 {
   font-size: 4rem;
   font-weight: 700;
   margin-bottom: 2rem;
+  padding-top: 2rem;
 }
 
-header .intro
+.header-wrapper header .intro
 {
+  color: #232323;
+  background-color: #27ae60;
   font-size: 1rem;
-  margin-bottom: 2rem;
+  padding: 2rem;
 }

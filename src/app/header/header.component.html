@@ -1,12 +1,20 @@
-<header>
-  <h1 class="brand">
-    {{ brand }}
-  </h1>
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="intro">
-        <ng-content></ng-content>
+<div class="header-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 mx-auto">
+        <header>
+          <h1 class="brand">
+            {{ brand }}
+          </h1>
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="intro">
+                <ng-content></ng-content>
+              </div>
+            </div>
+          </div>
+        </header>
       </div>
     </div>
-  </div>
-</header>
+  </div>  
+</div>

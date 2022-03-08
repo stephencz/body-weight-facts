@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 import { UserData } from './types/user-data';
+import {
+  calculateBodyMassIndex,
+  calculateBMIRange,
+  calculateBMR,
+  calculateTDEE
+} from './lib/health';
 
 @Component({
   selector: 'app-root',
@@ -15,6 +21,9 @@ export class AppComponent {
     weight: null,
     sex: null,
 
+    weightMetric: null,
+    heightMetric: null,
+
     bmi: null,
     bmiRange: null,
     bmr: null,
@@ -25,29 +34,23 @@ export class AppComponent {
     tdeeHeavy: null,
     tdeeAthlete: null,
   
-    macroCarb: null,
-    macroFat: null,
-    macroProtein: null,
-
     isMetric: false,
   };
 
   updateUserData(newUserData: UserData) : void {
     this.userData = newUserData;
+    
+    this.userData.bmi = calculateBodyMassIndex(this.userData);
+    this.userData.bmiRange = calculateBMIRange(this.userData);
+
+    this.userData.bmr = calculateBMR(this.userData);
+
+    this.userData.tdeeSedentary = calculateTDEE(this.userData, 1.2);
+    this.userData.tdeeLight = calculateTDEE(this.userData, 1.375);
+    this.userData.tdeeModerate = calculateTDEE(this.userData, 1.55);
+    this.userData.tdeeHeavy = calculateTDEE(this.userData, 1.725);
+    this.userData.tdeeAthlete = calculateTDEE(this.userData, 1.9);
+
   }
 
-  /**
-   * Calculates and returns the Body Mass Index of the user.
-   * @param userData UserData object
-   * @returns BMI
-   */
-  calculateBodyMassIndex(userData: UserData) : number {
-    if(userData.sex === "Male") {
-      return 0;
-    } else {
-      return 0;
-    }
-  }
-
- 
 }

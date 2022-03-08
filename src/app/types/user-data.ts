@@ -3,6 +3,8 @@ export interface UserData {
   age:            number | null;
   height:         number | null;
   weight:         number | null;
+  weightMetric:   number | null;
+  heightMetric:   number | null;
   sex:            string | null;
 
   bmi:            number | null;
@@ -15,10 +17,6 @@ export interface UserData {
   tdeeModerate:   number | null;
   tdeeHeavy:      number | null;
   tdeeAthlete:    number | null;
-
-  macroCarb:      number | null;
-  macroFat:       number | null;
-  macroProtein:   number | null;
 
   isMetric:       boolean;
 }

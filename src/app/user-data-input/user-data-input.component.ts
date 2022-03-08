@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter} from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 import { UserData } from '../types/user-data';
 import { UserDataErrorInfo } from '../types/user-data-error-info';
@@ -8,11 +8,13 @@ import {
   convertLbsToKgs
 } from '../lib/conversion';
 
+
 @Component({
   selector: 'app-user-data-input',
   templateUrl: './user-data-input.component.html',
   styleUrls: ['./user-data-input.component.scss']
 })
+
 export class UserDataInputComponent {
 
   @Input() userData: UserData;
@@ -41,15 +43,16 @@ export class UserDataInputComponent {
     if(!isNaN(event.target.value)) {
       if(event.target.value < 0) {
         this.userData.height = 0;
+        this.userData.height = 0;
 
       } else {
-        if(!this.userData.isMetric) {
-          this.userData.height = convertInchesToMeters(event.target.current);
-          console.log("EVENT: " + event.target.current);
-          console.log("METERS: " + convertInchesToMeters(event.target.current));
+
+        this.userData.height = event.target.value;
+        if(this.userData.isMetric) {
+          this.userData.heightMetric = event.target.value;
 
         } else {
-          this.userData.height = event.target.current;
+          this.userData.heightMetric = convertInchesToMeters(event.target.value);
 
         }
       }
@@ -68,15 +71,20 @@ export class UserDataInputComponent {
     if(!isNaN(event.target.value)) {
       if(event.target.value < 0) {
         this.userData.weight = 0;
+        this.userData.weightMetric = 0;
 
       } else {
-        if(!this.userData.isMetric) {
-          this.userData.weight = convertLbsToKgs(event.target.value);
+        
+        this.userData.weight = event.target.value;
 
+        if(this.userData.isMetric) {
+          this.userData.weightMetric = event.target.value;
+        
         } else {
-          this.userData.weight = event.target.value;
+          this.userData.weightMetric = convertLbsToKgs(event.target.value);
 
         }
+
       }
 
       this.userDataErrorInfo.weightHasError = false;
@@ -89,12 +97,19 @@ export class UserDataInputComponent {
     this.userDataUpdatedEvent.emit(this.userData);
   }
 
+  handleUserSexUpdate(event: any) {
+    this.userData.sex = event.target.value;
+    this.userDataUpdatedEvent.emit(this.userData);
+  }
+
   handleUserMetricUpdate() {
     
     this.userData.isMetric = !this.userData.isMetric;
     
     this.userData.height = null;
+    this.userData.heightMetric = null;
     this.userData.weight = null;
+    this.userData.weightMetric = null;
 
     this.userDataUpdatedEvent.emit(this.userData);
   }
