@@ -5,6 +5,12 @@
 $fredoka-ff: 'Fredoka', sans-serif;
 $noto-sans-ff: 'Noto Sans', sans-serif;
 
+$unknown-color:        #dbdbdb;
+$underweight-color:   #27aea8;
+$healthy-color:       #27ae60;
+$overweight-color:    #ae8427;
+$obese-color:         #ae2727;
+
 html, body
 {
   font-family: $noto-sans-ff;

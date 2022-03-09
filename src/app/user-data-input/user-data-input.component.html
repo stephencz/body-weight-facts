@@ -1,14 +1,7 @@
 <div class="user-data-input-wrapper">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6 offset-lg-1">
-        <div class="user-data-info">
-          <ng-content></ng-content>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-6 offset-lg-1">
+      <div class="col-lg-6">
         <table>
           <tbody>
             <tr>
@@ -80,7 +73,7 @@
                     id="weight" 
                     type="text" 
                     (change)="handleUserWeightUpdate($event)"  
-                    placeholder="kilograms"
+                    placeholder="kilogramsng"
                   />
                 </td>
               </tr>
@@ -105,6 +98,11 @@
             
           </tbody>
         </table>
+      </div>
+      <div class="col-lg-6">
+        <app-health-glance>
+          
+        </app-health-glance>
       </div>
     </div>
   </div>

@@ -1,11 +1,12 @@
 <main>
   <app-header [brand]="title" ></app-header>
-  <app-user-data-input 
-    [userData]="userData" 
-    (userDataUpdatedEvent)="updateUserData($event)"
-  >
+  <app-text-bubble>
     A person's body weight can be one of the best indicators of their overall health. 
     This tool will help you better understand what your weight says about your health.
     Enter your age, height, weight, and sex below to learn what your weight says about your health, and the actions you can take to live a healthier life.
-  </app-user-data-input>
+  </app-text-bubble>
+  <app-user-data-input 
+    [userData]="userData" 
+    (userDataUpdatedEvent)="updateUserData($event)"
+  ></app-user-data-input>
 </main>
