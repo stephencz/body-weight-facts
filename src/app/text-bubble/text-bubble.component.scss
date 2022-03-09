@@ -1,0 +1,10 @@
+@import "../../styles.scss";
+
+.text-bubble-wrapper
+{
+  border-radius: 20px;
+  border: 1px solid $color-unknown-comp;
+  background-color: $color-unknown;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}

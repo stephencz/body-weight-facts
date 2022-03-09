@@ -1,109 +1,99 @@
+
 <div class="user-data-input-wrapper">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <table>
-          <tbody>
-            <tr>
-              <td>
-                <label for="age">Age:</label>
-              </td>
-              <td colspan="3">
-                <input 
-                  id="age" 
-                  type="text" 
-                  (change)="handleUserAgeUpdate($event)" 
-                  [ngClass]="{'input-error': userDataErrorInfo.ageHasError}"
-                  placeholder="How old are you?"
-                />
-              </td>
-            </tr>
-            
-            <ng-template [ngIf]="!userData.isMetric">
-              <tr>
-                <td>
-                  <label for="height">Height:</label>
-                </td>
-                <td colspan="3">
-                  <input 
-                    id="height" 
-                    type="text" 
-                    (change)="handleUserHeightUpdate($event)" 
-                    [ngClass]="{'input-error': userDataErrorInfo.heightHasError}"
-                    placeholder="inches"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label for="weight">Weight:</label>
-                </td>
-                <td colspan="3">
-                  <input 
-                    id="weight" 
-                    type="text" 
-                    (change)="handleUserWeightUpdate($event)" 
-                    [ngClass]="{'input-error': userDataErrorInfo.weightHasError}"
-                    placeholder="pounds"
-                  />
-                </td>
-              </tr>
-            </ng-template>
+  <table>
+    <tbody>
+      <tr>
+        <td>
+          <label for="age">Age:</label>
+        </td>
+        <td colspan="3">
+          <input 
+            id="age" 
+            type="text" 
+            (change)="handleUserAgeUpdate($event)" 
+            [ngClass]="{'input-error': userDataErrorInfo.ageHasError}"
+            placeholder="How old are you?"
+          />
+        </td>
+      </tr>
       
-            <ng-template [ngIf]="userData.isMetric">
-              <tr>
-                <td>
-                  <label for="height">Height:</label>
-                </td>
-                <td colspan="3">
-                  <input 
-                    id="height" 
-                    type="text" 
-                    (change)="handleUserHeightUpdate($event)" 
-                    placeholder="meters"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <label for="weight">Weight:</label>
-                </td>
-                <td colspan="3">
-                  <input 
-                    id="weight" 
-                    type="text" 
-                    (change)="handleUserWeightUpdate($event)"  
-                    placeholder="kilogramsng"
-                  />
-                </td>
-              </tr>
-            </ng-template>
+      <ng-template [ngIf]="!userData.isMetric">
+        <tr>
+          <td>
+            <label for="height">Height:</label>
+          </td>
+          <td colspan="3">
+            <input 
+              id="height" 
+              type="text" 
+              (change)="handleUserHeightUpdate($event)" 
+              [ngClass]="{'input-error': userDataErrorInfo.heightHasError}"
+              placeholder="inches"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="weight">Weight:</label>
+          </td>
+          <td colspan="3">
+            <input 
+              id="weight" 
+              type="text" 
+              (change)="handleUserWeightUpdate($event)" 
+              [ngClass]="{'input-error': userDataErrorInfo.weightHasError}"
+              placeholder="pounds"
+            />
+          </td>
+        </tr>
+      </ng-template>
+
+      <ng-template [ngIf]="userData.isMetric">
+        <tr>
+          <td>
+            <label for="height">Height:</label>
+          </td>
+          <td colspan="3">
+            <input 
+              id="height" 
+              type="text" 
+              (change)="handleUserHeightUpdate($event)" 
+              placeholder="meters"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <label for="weight">Weight:</label>
+          </td>
+          <td colspan="3">
+            <input 
+              id="weight" 
+              type="text" 
+              (change)="handleUserWeightUpdate($event)"  
+              placeholder="kilogramsng"
+            />
+          </td>
+        </tr>
+      </ng-template>
+
+      <tr>
+        <td><label for="sex">Sex: </label></td>
+        <td>
+          <select (change)="handleUserSexUpdate($event)">
+            <option disabled selected value> Choose </option>
+            <option>Male</option>
+            <option>Female</option>
+          </select>
+        </td>
+        <td>
+          <label for="is-metric">Use Metric?</label>
+        </td>
+        <td>
+          <input id="is-metric" type="checkbox" (click)="handleUserMetricUpdate()"/>
+        </td>
+      </tr>
       
-            <tr>
-              <td><label for="sex">Sex: </label></td>
-              <td>
-                <select (change)="handleUserSexUpdate($event)">
-                  <option disabled selected value> Choose </option>
-                  <option>Male</option>
-                  <option>Female</option>
-                </select>
-              </td>
-              <td>
-                <label for="is-metric">Use Metric?</label>
-              </td>
-              <td>
-                <input id="is-metric" type="checkbox" (click)="handleUserMetricUpdate()"/>
-              </td>
-            </tr>
-            
-          </tbody>
-        </table>
-      </div>
-      <div class="col-lg-6">
-        <app-health-glance>
-          
-        </app-health-glance>
-      </div>
-    </div>
-  </div>
+    </tbody>
+  </table>
 </div>

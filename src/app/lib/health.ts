@@ -78,12 +78,11 @@ function calculateTDEE(userData: UserData, modifer: number) : number | null {
 
   return null;
 }
-
 export {
   
   calculateBodyMassIndex,
   calculateBMIRange,
   calculateBMR,
-  calculateTDEE
+  calculateTDEE,
 
 };

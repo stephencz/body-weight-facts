@@ -1,12 +1,26 @@
 <main>
-  <app-header [brand]="title" ></app-header>
-  <app-text-bubble>
-    A person's body weight can be one of the best indicators of their overall health. 
-    This tool will help you better understand what your weight says about your health.
-    Enter your age, height, weight, and sex below to learn what your weight says about your health, and the actions you can take to live a healthier life.
-  </app-text-bubble>
-  <app-user-data-input 
-    [userData]="userData" 
-    (userDataUpdatedEvent)="updateUserData($event)"
-  ></app-user-data-input>
+  <app-header [userData]="userData" [brand]="title" ></app-header>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <app-text-bubble>
+          A person's body weight can be one of the best indicators of their overall health. 
+          This tool will help you better understand what your weight says about your health.
+          Enter your age, height, weight, and sex below to learn what your weight says about your health, and the actions you can take to live a healthier life.
+        </app-text-bubble>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <app-user-data-input 
+          [userData]="userData" 
+          (userDataUpdatedEvent)="updateUserData($event)"
+        ></app-user-data-input>
+      </div>
+      <div class="col-lg-6">
+        <app-health-glance></app-health-glance>
+      </div>
+    </div>
+  </div> 
 </main>

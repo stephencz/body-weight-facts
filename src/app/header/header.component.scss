@@ -1,8 +1,10 @@
+@import "../../styles.scss";
 
 .header-wrapper
 {
-  background-color: #27ae60;
-  border-bottom: 3px solid #259f58;
+  background-color: $color-healthy;
+  border-bottom: 3px solid $color-healthy-comp;
+  margin-bottom: 2rem;
 }
 
 .header-wrapper header h1.brand

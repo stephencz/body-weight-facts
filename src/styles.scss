@@ -5,17 +5,25 @@
 $fredoka-ff: 'Fredoka', sans-serif;
 $noto-sans-ff: 'Noto Sans', sans-serif;
 
-$unknown-color:        #dbdbdb;
-$underweight-color:   #27aea8;
-$healthy-color:       #27ae60;
-$overweight-color:    #ae8427;
-$obese-color:         #ae2727;
+$color-font-light:        #fff;
+$color-font-dark:         #232323;
+
+$color-unknown:           #f5f5f5;
+$color-unknown-comp:      #e7e7e7;
+
+$color-underweight:       #27aea8;
+
+$color-healthy:           #27ae60;
+$color-healthy-comp:      #259f58;           
+
+$color-overweight:        #ae8427;
+$color-obese:             #ae2727;
 
 html, body
 {
   font-family: $noto-sans-ff;
   font-size: 20px;
-  line-height: 1.7rem;
+  line-height: 2rem;
 }
 
 h1, h2, h3, h4, h5, h6
